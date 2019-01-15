@@ -94,17 +94,4 @@ Rails.application.configure do
 
 
 
-  config.action_mailer.raise_delivery_errors = true
-config.action_mailer.delivery_method = :smtp
-host = 'glacial-cliffs-29759.herokuapp.com'
-config.action_mailer.default_url_options = { host: host }
-ActionMailer::Base.smtp_settings = {
-  address:              'smtp.postmarkapp.com',
-  port:                 587,
-  domain:               'sarthakjha.com',
-  user_name:            Rails.application.secrets.postmark_api_token,
-  password:             Rails.application.secrets.postmark_api_token,
-  authentication:       :plain,
-  enable_starttls_auto: true
-}
 end
