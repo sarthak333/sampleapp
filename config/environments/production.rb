@@ -88,7 +88,10 @@ Rails.application.configure do
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
+  config.action_mailer.raise_delivery_errors = true
 
+   host = 'https://glacial-cliffs-29759.herokuapp.com/'     # Cloud IDE
+ config.action_mailer.default_url_options = { host: host, protocol: 'https' }
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end
