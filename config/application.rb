@@ -11,7 +11,6 @@ module App
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
     config.action_mailer.delivery_method = :smtp
-    config.action_mailer.delivery_method = :smtp
     host = 'salty-plains-80839.herokuapp.com'
     config.action_mailer.default_url_options = { host: host, protocol: 'https' }
 

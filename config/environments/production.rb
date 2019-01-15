@@ -93,6 +93,20 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.action_mailer.raise_delivery_errors = true
+  config.load_defaults 5.2
+  config.action_mailer.delivery_method = :smtp
+  host = 'salty-plains-80839.herokuapp.com'
+  config.action_mailer.default_url_options = { host: host, protocol: 'https' }
+
+config.action_mailer.smtp_settings = {
+ address:              'smtp.postmarkapp.com',
+ port:                 587,
+ domain:               'sarthakjha.com',
+ user_name:            Rails.application.secrets.postmark_api_token,
+ password:             Rails.application.secrets.postmark_api_token,
+ authentication:       :plain,
+ enable_starttls_auto: true
+}
 
 
 end
