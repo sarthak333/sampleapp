@@ -22,6 +22,10 @@ VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
           SecureRandom.urlsafe_base64
         end
       end
+      # Sends activation email.
+      def send_activation_emailm
+      UserMailer.account_activation(self).deliver_now
+      end
                  # Remembers a user in the database for use in persistent sessions.
  def remember
    self.remember_token = User.new_token
@@ -43,10 +47,7 @@ update_attribute(:activated,    true)
 update_attribute(:activated_at, Time.zone.now)
 end
 
-# Sends activation email.
-def send_activation_email
-UserMailer.account_activation(self).deliver_now
-end
+
 
 
 
