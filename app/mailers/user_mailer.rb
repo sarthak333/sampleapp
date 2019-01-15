@@ -5,7 +5,7 @@ default from: 'hello@sarthakjha.com'
     @user = user
     mail(
    :subject => 'Hello from Postmark',
-   :to  => 'test@sarthakjha.com',
+   :to  => user.email,
    :from => 'hello@sarthakjha.com',
    :html_body => 'HTML body goes here',
    :track_opens => 'true')
