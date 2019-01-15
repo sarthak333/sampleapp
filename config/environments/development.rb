@@ -54,7 +54,10 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-
+  config.action_mailer.raise_delivery_errors = true
+   config.action_mailer.delivery_method = :test
+   host = 'https://glacial-cliffs-29759.herokuapp.com/'     # Cloud IDE
+ config.action_mailer.default_url_options = { host: host, protocol: 'https' }
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
