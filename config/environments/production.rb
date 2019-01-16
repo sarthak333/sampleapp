@@ -88,17 +88,17 @@ Rails.application.configure do
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
-  
+
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  host = 'salty-plains-80839.herokuapp.com'
-  config.action_mailer.default_url_options = { host: host }
+  host = 'guarded-fjord-67926.herokuapp.com'
+  config.action_mailer.default_url_options = { host: host, protocol: https }
   ActionMailer::Base.smtp_settings = {
     :address        => 'smtp.sendgrid.net',
     :port           => '587',
     :authentication => :plain,
-    :user_name      => ENV['app122041752@heroku.com'],
-    :password       => ENV['xkgikgg66486'],
+    :user_name      => ENV['app122096265@heroku.com'],
+    :password       => ENV['z2cusib34550'],
     :domain         => 'heroku.com',
     :enable_starttls_auto => true
   }
