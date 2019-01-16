@@ -94,13 +94,12 @@ Rails.application.configure do
   host = 'guarded-fjord-67926.herokuapp.com'
   config.action_mailer.default_url_options = { host: host}
   ActionMailer::Base.smtp_settings = {
-    :address        => 'smtp.sendgrid.net',
+    :address        => 'smtp.postmarkapp.com',
     :port           => '587',
     :authentication => :plain,
-    :user_name      => ENV['app122096265@heroku.com'],
-    :password       => ENV['z2cusib34550'],
-    :domain         => 'heroku.com',
-    :enable_starttls_auto => true
+    :user_name      => '545a992b-86ef-4e87-9299-015014fbc9d8',
+    :password       => '545a992b-86ef-4e87-9299-015014fbc9d8',
+    :domain         => 'heroku.com'
   }
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
