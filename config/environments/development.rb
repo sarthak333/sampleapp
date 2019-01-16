@@ -54,14 +54,13 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-<<<<<<< HEAD
 
-=======
+
   config.action_mailer.raise_delivery_errors = true
    config.action_mailer.delivery_method = :test
    host = 'localhost:3000'
     config.action_mailer.default_url_options = { host: host, protocol: 'http' }
->>>>>>> account-activation
+
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
@@ -69,16 +68,8 @@ Rails.application.configure do
 
     config.action_mailer.delivery_method = :test
   config.action_mailer.delivery_method = :smtp
-  host = 'salty-plains-80839.herokuapp.com'
-  config.action_mailer.default_url_options = { host: host, protocol: 'https' }
+  host = 'localhost:3000'
+  config.action_mailer.default_url_options = { host: host, protocol: 'http' }
 
-config.action_mailer.smtp_settings = {
- address:              'smtp.postmarkapp.com',
- port:                 587,
- domain:               'sarthakjha.com',
- user_name:            Rails.application.secrets.postmark_api_token,
- password:             Rails.application.secrets.postmark_api_token,
- authentication:       :plain,
- enable_starttls_auto: true
-}
+
 end
