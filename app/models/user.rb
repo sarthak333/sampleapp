@@ -16,6 +16,8 @@ VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
                                                         BCrypt::Engine.cost
           BCrypt::Password.create(string, cost: cost)
         end
+    
+
 
         # Returns a random token.
         def new_token
