@@ -13,6 +13,7 @@ class UsersController < ApplicationController
   end
 
   def create
+<<<<<<< HEAD
   @user = User.new(user_params)
   if @user.save
     @user.send_activation_emailm
@@ -22,6 +23,19 @@ class UsersController < ApplicationController
     render 'new'
   end
 end
+=======
+     @user = User.new(user_params)
+     if @user.save
+       UserMailer.account_activation(@user).deliver_now
+       flash[:info] = "Please check your email to activate your account."
+       redirect_to root_url
+     else
+       render 'new'
+     end
+   end
+   
+
+>>>>>>> account-activation
 def edit
     @user = User.find(params[:id])
   end
